@@ -5,6 +5,10 @@ const CONFIG = {
   whatsapp: "5534991106189",
   whatsappMsg: "Oi, Monalysa! Vim pelo site e quero agendar minha consulta.",
   instagram: "https://www.instagram.com/monalysa_nutri/",
+  // Avaliações do Google, copiadas como estão. A ordem aqui é a ordem no site (Aryane primeiro).
+  reviews: [
+    // { name: "Aryane", text: "…" },
+  ],
 };
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -442,7 +446,7 @@ function wednesday() {
     sticker.textContent = "Amanhã é quarta: separa o rosa.";
     status.innerHTML = "Amanhã é quarta. <em>Já separou o rosa?</em>";
   } else {
-    sticker.textContent = "Na quarta, a gente usa rosa.";
+    sticker.textContent = "Na quarta, usamos rosa.";
     status.innerHTML = `Faltam ${until} dias para a quarta. <em>Vai de rosa?</em>`;
   }
 }
@@ -543,7 +547,23 @@ function reveals() {
   $$(".reveal").forEach((el, i) => { el.style.transitionDelay = `${(i % 3) * 70}ms`; io.observe(el); });
 }
 
+/* ---------- avaliações ---------- */
+function reviews() {
+  const list = $("#reviewsList");
+  if (!CONFIG.reviews.length) { list.remove(); return; }
+  CONFIG.reviews.forEach((r, i) => {
+    const li = document.createElement("li");
+    li.className = "review reveal" + (i === 0 ? " review--first" : "");
+    li.innerHTML = '<p class="review__stars" aria-label="5 estrelas">★★★★★</p><blockquote><p></p></blockquote><p class="review__name"><span class="review__avatar" aria-hidden="true"></span><span></span></p>';
+    li.querySelector("blockquote p").textContent = `“${r.text}”`;
+    li.querySelector(".review__avatar").textContent = r.name.trim()[0];
+    li.querySelector(".review__name span:last-child").textContent = r.name;
+    list.append(li);
+  });
+}
+
 /* ---------- início ---------- */
+reviews();
 wednesday();
 header();
 reflexo();

@@ -172,7 +172,7 @@ button { font: inherit; color: inherit; }
   aspect-ratio: 3 / 4; background: var(--rose-soft);
   box-shadow: 0 0 0 10px var(--white), 0 0 0 11px var(--line), var(--shadow);
 }
-.mirror__glass img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.mirror__glass img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 .mirror__glass::after { /* reflexo de vidro */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.22) 46%, transparent 54%);
@@ -278,7 +278,7 @@ button { font: inherit; color: inherit; }
 .about__main img { width: 100%; height: 100%; object-fit: cover; }
 .about__stage { position: absolute; right: 0; bottom: 0; width: 44%; margin: 0; background: var(--white); padding: 8px 8px 0; border-radius: var(--r-md); box-shadow: var(--shadow); transform: rotate(3deg); }
 .about__stage picture { display: block; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; position: relative; }
-.about__stage img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.about__stage img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .about__stage figcaption { font: italic 400 .9375rem var(--serif); color: var(--wine); text-align: center; padding: 8px 0 10px; }
 .about__copy h2 { font-size: var(--fs-h2); margin-bottom: var(--space-5); }
 .about__copy > p { color: var(--muted); max-width: 52ch; }
@@ -290,6 +290,26 @@ button { font: inherit; color: inherit; }
 .about__quote { margin: var(--space-6) 0 0; padding-left: 20px; border-left: 3px solid var(--rose-ink); }
 .about__quote p { font: italic 400 clamp(1.25rem, 1rem + 1vw, 1.75rem)/1.25 var(--serif); color: var(--wine); }
 @media (min-width: 900px) { .about__grid { grid-template-columns: .9fr 1.1fr; gap: 96px; } }
+
+/* ---------- AVALIAÇÕES ---------- */
+.reviews { padding: 0 0 var(--section); }
+.reviews__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; }
+.reviews__head h2 { font-size: var(--fs-h2); }
+.reviews__score { display: grid; justify-items: start; gap: 2px; text-decoration: none; background: var(--white); border-radius: var(--r-md); padding: 18px 24px; box-shadow: 0 0 0 1px var(--line); transition: box-shadow .25s, transform .25s var(--ease); }
+.reviews__score:hover { box-shadow: 0 0 0 2px var(--rose-ink); transform: translateY(-2px); }
+.reviews__score strong { font-size: 2.5rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; color: var(--wine); }
+.reviews__stars, .review__stars { color: #C98A2B; letter-spacing: 2px; }
+.reviews__score span:last-child { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
+.reviews__list { display: grid; gap: 14px; margin-top: var(--space-7); }
+.review { background: var(--white); border-radius: var(--r-lg); padding: 28px; box-shadow: 0 0 0 1px var(--line); display: flex; flex-direction: column; gap: 16px; }
+.review blockquote { margin: 0; flex: 1; }
+.review blockquote p { font-size: 1.0625rem; line-height: 1.55; }
+.review__name { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--wine); }
+.review__avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-soft); color: var(--wine); font-weight: 800; }
+.review--first { background: var(--rose-soft); box-shadow: none; }
+.review--first blockquote p { font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); font-weight: 500; }
+.review--first .review__avatar { background: var(--white); }
+@media (min-width: 900px) { .reviews__list { grid-template-columns: repeat(3, 1fr); } .review--first { grid-column: span 2; grid-row: span 2; padding: 40px; } }
 
 /* ---------- QUARTA ROSA ---------- */
 .wed { background: var(--rose); padding: var(--section) 0; color: var(--wine-deep); }

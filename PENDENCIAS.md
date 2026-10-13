@@ -3,7 +3,9 @@
 Legenda: **[FORNECIDO]** veio do formulário ou das fotos · **[CONFIRMADO]** é público no Instagram ou no Linktree dela · **[INFERÊNCIA]** foi escrito por nós e precisa de aprovação · **[PENDENTE]** o dado ainda falta.
 
 ## Obrigatório antes de publicar
-- [ ] **[PENDENTE] Número do CRN-9.** A exibição é obrigatória (CFN 856/2026, art. 24). Hoje aparece `{{PREENCHER}}` no card do "Sobre" e no rodapé de `index.html`. O CRN-9 também é inferência, tirada do DDD 34 (MG): confirmar o regional.
+- [x] **[FORNECIDO] CRN-9 22703.** Aparece no hero, no "Sobre" e no rodapé.
+- [x] **[CONFIRMADO] Endereço:** R. Joaquim das Chagas, 1243, Várzea, Patos de Minas/MG, 38700-356 (perfil do Google). Aparece no rodapé e no JSON-LD.
+- [ ] **[PENDENTE] Texto das avaliações do Google.** O Google bloqueia a leitura automática. Colar os textos em `CONFIG.reviews`, no topo de `js/main.js`, com a da Aryane primeiro. Usar só avaliações sem números de quilos e sem antes/depois (CFN, art. 69).
 - [ ] **[PENDENTE] Domínio.** `https://www.monalysarodrigues.com.br/` é provisório. Ele aparece em `index.html` (canonical, og:url, og:image e JSON-LD), `robots.txt` e `sitemap.xml`.
 - [ ] **[INFERÊNCIA] "+1000 pessoas já passaram pelo Método LeveMente".** A bio diz "+1000 vidas transformadas", e isso soa como resultado, o que é vetado pelo CFN (art. 69). Por isso o texto foi reescrito como número de atendidas. Ela confirma que mais de 1000 pessoas foram atendidas?
 - [ ] **[INFERÊNCIA] Aviso de IA no rodapé** ("revisados pela nutricionista"). Só pode ficar no ar depois que ela revisar os textos.
@@ -17,7 +19,6 @@ Legenda: **[FORNECIDO]** veio do formulário ou das fotos · **[CONFIRMADO]** é
 - [ ] Ela atende online? Se sim, vale incluir esse dado no site e nas Dúvidas.
 
 ## Dados que ainda faltam
-- [ ] Endereço e cidade do consultório. Pelo DDD 34, a região seria o Triângulo Mineiro, mas isso não foi confirmado. Depois de confirmado, entra em seção e mapa, e no JSON-LD (`address`).
 - [ ] Tempo de atendimento (anos). Ela marcou "experiência e tempo de atendimento" como algo que passa confiança.
 - [ ] Formação e especializações. Nenhuma foi citada, para não inventar.
 - [ ] Depoimentos: não há nenhum no site. Hoje o site aponta para o destaque "Elas venceram!" do Instagram. Não usar antes/depois nem números de peso.
