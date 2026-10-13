@@ -5,7 +5,7 @@ Legenda: **[FORNECIDO]** veio do formulário ou das fotos · **[CONFIRMADO]** é
 ## Obrigatório antes de publicar
 - [x] **[FORNECIDO] CRN-9 22703.** Aparece no hero, no "Sobre" e no rodapé.
 - [x] **[CONFIRMADO] Endereço:** R. Joaquim das Chagas, 1243, Várzea, Patos de Minas/MG, 38700-356 (perfil do Google). Aparece no rodapé e no JSON-LD.
-- [ ] **[PENDENTE] Texto das avaliações do Google.** O Google bloqueia a leitura automática. Colar os textos em `CONFIG.reviews`, no topo de `js/main.js`, com a da Aryane primeiro. Usar só avaliações sem números de quilos e sem antes/depois (CFN, art. 69).
+- [x] **[FORNECIDO] Avaliações do Google** (prints): 8 publicadas, Aryelle e Ewertton primeiro. Ficaram de fora as que citam quilos ou prazo de resultado (Walmyr, Camila, Renilda, Luciana), as cortadas no print (Vanessa, Ana Paula) e a do perfil "financeiro seculus". Da Ewertton e de algumas longas foram usados trechos, sem a frase "Em 2 meses já perdi 11 kg" (CFN, art. 69). Confirmar com a Monalysa.
 - [ ] **[PENDENTE] Domínio.** `https://www.monalysarodrigues.com.br/` é provisório. Ele aparece em `index.html` (canonical, og:url, og:image e JSON-LD), `robots.txt` e `sitemap.xml`.
 - [ ] **[INFERÊNCIA] "+1000 pessoas já passaram pelo Método LeveMente".** A bio diz "+1000 vidas transformadas", e isso soa como resultado, o que é vetado pelo CFN (art. 69). Por isso o texto foi reescrito como número de atendidas. Ela confirma que mais de 1000 pessoas foram atendidas?
 - [ ] **[INFERÊNCIA] Aviso de IA no rodapé** ("revisados pela nutricionista"). Só pode ficar no ar depois que ela revisar os textos.

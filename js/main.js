@@ -7,7 +7,15 @@ const CONFIG = {
   instagram: "https://www.instagram.com/monalysa_nutri/",
   // Avaliações do Google, copiadas como estão. A ordem aqui é a ordem no site (Aryane primeiro).
   reviews: [
-    // { name: "Aryane", text: "…" },
+    { name: "Aryelle Dias", text: "Antes de começar eu achava que precisava sofrer para emagrecer, tentei diversas vezes e não havia conseguido. Pesquisei bastante e achei o perfil da Mona, segui no Instagram e me identifiquei muito com o jeito dela e a paixão pelo que ela faz. Desde a primeira consulta fiquei encantada e vi que era diferente, o plano é realista, se adapta a rotina e é leve. Estou tendo resultados excelentes sem precisar sofrer. Estou conseguindo curtir o processo pela primeira vez. E consigo me reconhecer novamente. Ela te dá todo o suporte e faz com que eu me sinta acolhida. Indico ela de olhos fechados. Ela é incrível. Gratidão define." },
+    // trecho: a frase final com o número de quilos foi omitida (CFN 856/2026, art. 69)
+    { name: "Ewertton Martins", text: "Gostei muito da abordagem da Monalysa, sempre com muita dedicação e atenção ao passar a dieta, e depois ela sempre pede o feedback pra saber como reestruturar a dieta de uma maneira mais acessível." },
+    { name: "Adriana Caixeta", text: "A Monalysa é uma nutri que descomplica a vida! Ela inclui os alimentos que você gosta sem fazer terrorismo nutricional. Ela dá direcionamento e não te deixa caminhar sozinha! Depois que a conheci, entendi melhor minhas necessidades e aprendi a comemorar as pequenas vitórias. Indico de olhos fechados. Melhor nutri da vida!" },
+    { name: "Matheus Victor", text: "A Monalysa tem uma abordagem realista e que se propõe a encaixar a dieta na rotina de cada paciente, sem inventar muito muito menos colocar ingredientes caros e fora do comum. Sempre prestativa e acessível, indico demais." },
+    { name: "Glaucia Aparecida", text: "Atendimento humanizado, acolhedor, tem a nutri que nos entende, respeita, monta estratégia alimentar dentro da nossa realidade, respeitando as limitações de cada momento. Nos encorajando a se abrir ao novo, a tentar um pouquinho mais. Uma mão amiga que caminha com você." },
+    { name: "Mayk Junior", text: "Antes de começar o acompanhamento com a Monalysa, eu me sentia triste e desanimado com meu corpo. Por isso, resolvi marcar ela para mudar essa chave. Os planos são maravilhosos, ela sempre à disposição. Isso tudo, com ela sempre motivando, ajuda muito a mudar os hábitos, confesso que difícil no começo, mas vai mudando a mente e com o tempo já está sem por cento focado. Eu adoro fazer os planos." },
+    { name: "Juliana", text: "Em fevereiro de 2025 eu procurei e descobri a Nutricionista Monalysa. Porque não é fácil… Ela tem um grupo das pessoas que fazem regime, então ela está sempre trabalhando com a gente no dia a dia, dando forças, pronta pra qualquer hora que você precisar dela, fazendo desafios com a gente… isso não tem preço! Não é fácil, mas com tanta ajuda, a gente acaba tendo forças para continuar. Obrigada Mona por estar sempre nos ajudar." },
+    { name: "Suyenne Oliveira", text: "Sempre tive muita dificuldade com relação ao meu peso, sou uma pessoa muito ansiosa. Já fiz várias dietas loucas e bastante restritivas, tinha alguns resultados momentâneos, mas sempre voltava ao que era antes. Mas com a ajuda da Mona, descobri que dieta não precisa ser algo traumático e ruim, que podemos sim comer o que gostamos e fazer dieta, desde que seja tudo equilibrado. Só tenho a agradecer pela paciência, por todo carinho e cuidado." },
   ],
 };
 
@@ -559,7 +567,24 @@ function reviews() {
     li.querySelector(".review__avatar").textContent = r.name.trim()[0];
     li.querySelector(".review__name span:last-child").textContent = r.name;
     list.append(li);
+    // textos longos ficam recolhidos, com botão para ler tudo
+    const q = li.querySelector("blockquote");
+    if (i > 0 && r.text.length > 260) {
+      q.classList.add("is-clamped");
+      const b = document.createElement("button");
+      b.className = "review__more"; b.type = "button"; b.textContent = "Ler tudo"; b.setAttribute("aria-expanded", "false");
+      b.addEventListener("click", () => {
+        const open = q.classList.toggle("is-clamped") === false;
+        b.textContent = open ? "Mostrar menos" : "Ler tudo"; b.setAttribute("aria-expanded", String(open));
+      });
+      q.after(b);
+    }
   });
+  const more = document.createElement("li");
+  more.className = "review review--more reveal";
+  more.innerHTML = '<a target="_blank" rel="noopener"><strong>5,0</strong><span>Ler todas as avaliações no Google →</span></a>';
+  more.querySelector("a").href = $(".reviews__score").href;
+  list.append(more);
 }
 
 /* ---------- início ---------- */
