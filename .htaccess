@@ -4,10 +4,10 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Tudo em https://www.monalysarodrigues.com.br
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteRule ^ https://www.monalysarodrigues.com.br%{REQUEST_URI} [R=301,L,NE]
+  # Ativar SÓ depois que o SSL estiver ligado no hPanel (tirar os # das 3 linhas):
+  # RewriteCond %{HTTPS} off [OR]
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^ https://www.monalysarodrigues.com.br%{REQUEST_URI} [R=301,L,NE]
 </IfModule>
 
 <IfModule mod_deflate.c>
